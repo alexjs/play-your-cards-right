@@ -1,10 +1,6 @@
 # Play Your Cards Right
 
-Come on down and play a game of higher or lower, but this time it's with your favourite government websites.
+One of the suggestions at #NHTG12 was to make the rather fun app by [Jordan](http://jordanh.net/) also support civil servant salaries.
 
-It's a simple app built in Node.js in a few hours for [National Hack the Government Day 2012](http://rewiredstate.org/events/nhtg12), and uses [data released by Cabinet Office](http://data.gov.uk/dataset/central-government-websites-2010-11).
+This is a dirty hack, based on data released [June 2010](http://www.direct.gov.uk/en/Nl1/Newsroom/DG_188114) to do just that.
 
-## Links
-
-* [Live demo](http://play-your-cards-right.herokuapp.com/)
-* [Rewired State hack page](http://hacks.rewiredstate.org/events/nhtg12/play-your-cards-right)
