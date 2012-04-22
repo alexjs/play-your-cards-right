@@ -61,8 +61,10 @@ app.post('/higher', function(req, res){
     baseCard = req.session.cardsPlayed[req.session.cardsPlayed.length-2];
     lastCard = req.session.cardsPlayed[req.session.cardsPlayed.length-1];
 
-    if (baseCard.maxSalary <= lastCard.maxSalary) {
+    if (baseCard.maxSalary < lastCard.maxSalary) {
       showCorrectAnswer(req);
+    } else if (baseCard.maxSalary == lastCard.maxSalary) {
+      showIncorrectAnswerSame(req);
     } else {
       showIncorrectAnswer(req);
     }
@@ -77,8 +79,10 @@ app.post('/lower', function(req, res){
   baseCard = req.session.cardsPlayed[req.session.cardsPlayed.length-2];
   lastCard = req.session.cardsPlayed[req.session.cardsPlayed.length-1];
 
-  if (baseCard.maxSalary >= lastCard.maxSalary) {
+  if (baseCard.maxSalary > lastCard.maxSalary) {
     showCorrectAnswer(req);
+  } else if (baseCard.maxSalary == lastCard.maxSalary) {
+    showIncorrectAnswerSame(req);
   } else {
     showIncorrectAnswer(req);
   }
