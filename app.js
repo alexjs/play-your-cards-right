@@ -62,6 +62,8 @@ app.post('/higher', function(req, res){
 
     if (baseCard.cost <= lastCard.cost) {
       showCorrectAnswer(req);
+    } else if (baseCard.cost == lastCard.cost) {
+      showIncorrectAnswerSame(req);
     } else {
       showIncorrectAnswer(req);
     }
@@ -76,8 +78,10 @@ app.post('/lower', function(req, res){
   baseCard = req.session.cardsPlayed[req.session.cardsPlayed.length-2];
   lastCard = req.session.cardsPlayed[req.session.cardsPlayed.length-1];
 
-  if (baseCard.cost >= lastCard.cost) {
+  if (baseCard.cost > lastCard.cost) {
     showCorrectAnswer(req);
+  } else if (baseCard.cost == lastCard.cost) {
+    showIncorrectAnswerSame(req);
   } else {
     showIncorrectAnswer(req);
   }
