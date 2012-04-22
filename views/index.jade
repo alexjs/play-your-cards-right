@@ -2,7 +2,6 @@ div.cards
   each card in cardsPlayed
     div.card
       h1 #{card.title}
-      h2 #{card.organisation}
       h2 #{card.url}
       if card == lastCard
         div.buttons
@@ -12,10 +11,8 @@ div.cards
             input(type='submit', value='Lower!')
       else
         div.cost
-          span.value &pound;#{card.formattedMaxSalary}
-          span.desc Max Salary as of June 2010
-          span.desc Displayed pro-rata 
-          span.desc #{card.notes}
+          span.value &pound;#{card.formatted_cost}
+          span.desc cost for 10/11
           span.clear
 div.actions
   div.wrap
@@ -26,18 +23,10 @@ div.actions
     form(method='post', action='/restart')
       input(type='submit', value='Restart')
     div.info
-      p A simple game: predict whether the salary of the next displayed card will be higher or lower than the previous. 
-      br
-      p Based on salary information for the top paid civil servants, released Jun 2010. Know a more up to date or exhaustive dataset? Please get in touch.
-      br 
-      a(href='http://www.direct.gov.uk/en/Nl1/Newsroom/DG_188114') Data source
+      a(href='http://data.gov.uk/dataset/central-government-websites-2010-11') Data source
       &nbsp;&bull;&nbsp;
-      a(href='https://github.com/JordanHatch/play-your-cards-right') Original Code
-      &nbsp;&bull;&nbsp;
-      a(href='https://github.com/alexjs/play-your-cards-right') Forked Code
-      &nbsp;&bull; Originally Built by&nbsp;
+      a(href='https://github.com/JordanHatch/play-your-cards-right') Code
+      &nbsp;&bull; Built by&nbsp;
       a(href='http://jordanh.net/') Jordan
-      &nbsp;&bull; Hacked on by&nbsp;
-      a(href='http://www.alexsmith.org/') alexjs
 script(type='text/javascript')
   window.scroll(0,100000000000);
